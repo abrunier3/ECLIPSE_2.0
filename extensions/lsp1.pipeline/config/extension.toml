@@ -1,0 +1,11 @@
+[package]
+title = "LSP1 Pipeline"
+version = "0.1.0"
+category = "Other"
+
+[[python.module]]
+name = "lsp1_pipeline"
+
+[dependencies]
+"omni.ui" = {}
+"omni.kit.viewport.utility" = {}

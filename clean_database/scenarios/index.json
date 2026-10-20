@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "scenarios": [
+    {"id":"ECLIPSE_Project","name":"ECLIPSE_Project","scenario_slug":"ECLIPSE_Project","mode":"isru","saved_at":"2026-08-30T00:00:00.000Z","sysml_file":"clean_database/sysml/ECLIPSE_Project.sysml","path":"clean_database/scenarios/ECLIPSE_Project.json"},
+    {"id":"ISRU_Missionjjj","name":"ISRU_Missionjjj","scenario_slug":"ISRU_Missionjjj","mode":"isru","saved_at":"2026-07-22T18:33:46.882Z","sysml_file":"clean_database/sysml/ISRU_Missionjjj.sysml","path":"clean_database/scenarios/ISRU_Missionjjj.json"}
+  ]
+}
