@@ -1,0 +1,20 @@
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Generated packaging metadata
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Local editor settings
+.vscode/
