@@ -18,10 +18,10 @@ from S24.jsonio.vetting import VettingProc
 
 # NOTE: SYSML files live under clean_database/sysml/.
 def generate_json_from_sysml(sysml_filename, json_filename):
-    ROOT = Path.cwd().parent
+    ROOT = Path(__file__).resolve().parents[2]
 
-    DATA_SYSML = ROOT / "S24-ArchitectingLunarBases" / "clean_database" / "sysml"
-    DATA_JSON  = ROOT / "S24-ArchitectingLunarBases" / "clean_database" / "json"
+    DATA_SYSML = ROOT / "clean_database" / "sysml"
+    DATA_JSON  = ROOT / "clean_database" / "json"
 
     #SYSML_FILE = DATA_SYSML / "ISRUPlantModelV2.sysml"
     SYSML_FILE = DATA_SYSML / sysml_filename

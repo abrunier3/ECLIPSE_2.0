@@ -185,7 +185,7 @@ class LSP1PipelineExtension(omni.ext.IExt):
                 return
 
             pull_result = subprocess.run(
-                [git_exe, "-C", REPO_ROOT, "pull", "origin", "cleanup-branch"],
+                [git_exe, "-C", REPO_ROOT, "pull", "origin", "main"],
                 capture_output=True,
                 text=True,
                 shell=False

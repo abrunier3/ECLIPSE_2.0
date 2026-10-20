@@ -11,7 +11,7 @@ This repository contains the ECLIPSE lunar base digital engineering pipeline:
 
 Open the latest pipeline interface:
 
-https://abrunier3.github.io/S24-ArchitectingLunarBases/ScenarioIndex.html
+https://abrunier3.github.io/ECLIPSE_2.0/ScenarioIndex.html
 
 Older root-level HTML prototypes were removed to keep the repository focused and shareable.
 

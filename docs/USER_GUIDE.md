@@ -5,10 +5,28 @@ This guide follows the browser interface from top to bottom. Complete the steps 
 The browser interface is available at:
 
 ```text
-https://abrunier3.github.io/S24-ArchitectingLunarBases/ScenarioIndex.html
+https://abrunier3.github.io/ECLIPSE_2.0/ScenarioIndex.html
 ```
 
 You need repository write access and a GitHub Personal Access Token. The interface asks for the token when it needs to run or publish a workflow and keeps it only for the current browser session.
+
+## Repository deployment
+
+This copy targets `abrunier3/ECLIPSE_2.0` on branch `main`. Browser workflow dispatches,
+scenario writes, results reads, and remote map assets all use this repository.
+
+1. Commit and push the updated interface and the `.github/workflows/` directory to `main`.
+2. In the new repository's **Actions** tab, enable workflows if GitHub requests it.
+3. In **Settings > Pages > Build and deployment**, select **GitHub Actions**.
+4. Run **Deploy Pages** from **Actions**, selecting `main`, then open the site URL above.
+5. Use a GitHub token authorized for the new repository, with **Contents: read/write**
+   (scenario/CAD uploads) and **Actions: read/write** (workflow dispatch and monitoring).
+   A classic token needs the appropriate `repo` or `public_repo` scope.
+
+Workflows use the new repository's own `GITHUB_TOKEN` and the dispatched branch;
+they do not require credentials or a checkout of the original repository.
+The Omniverse extension must also be loaded from this copy: its pull button updates
+`origin/main` in the repository containing the extension.
 
 ## 1. Choose a Mission Scenario
 

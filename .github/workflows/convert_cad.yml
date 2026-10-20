@@ -1,0 +1,77 @@
+name: Step 3 — Convert CAD (CAD → USD/GLB + extract metadata)
+
+on:
+  workflow_dispatch:
+    inputs:
+      module_name:
+        description: 'Module name (e.g. ISRUPlant)'
+        required: false
+      usd_path:
+        description: 'Path to CAD file in repo (USD/STEP/STL/OBJ)'
+        required: false
+      source_up_axis:
+        description: 'Source CAD up axis for STEP/STL/OBJ (X, Y, or Z)'
+        required: false
+        default: 'Z'
+      batch_jobs_json:
+        description: 'Optional JSON list of CAD jobs, each with module_name, cad_path, and optional source_up_axis'
+        required: false
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Refresh checkout with latest uploaded CAD
+        run: |
+          git fetch origin "${GITHUB_REF_NAME}"
+          git checkout -B "${GITHUB_REF_NAME}" "origin/${GITHUB_REF_NAME}"
+
+      - name: Set up CAD conversion environment
+        uses: mamba-org/setup-micromamba@v2
+        with:
+          environment-name: cad-convert
+          cache-environment: true
+          cache-downloads: true
+          cache-environment-key: cad-convert-${{ runner.os }}-${{ hashFiles('.github/workflows/convert_cad.yml', 'pyproject.toml') }}
+          cache-downloads-key: cad-convert-downloads-${{ runner.os }}
+          create-args: >-
+            python=3.10
+            pythonocc-core
+            trimesh
+            numpy
+            pip
+
+      - name: Install dependencies
+        shell: bash -el {0}
+        run: |
+          pip install usd-core
+          pip install -e .
+
+      - name: Convert CAD to USD/GLB and extract metadata
+        shell: bash -el {0}
+        env:
+          MODULE_NAME: ${{ github.event.inputs.module_name }}
+          USD_PATH: ${{ github.event.inputs.usd_path }}
+          SOURCE_UP_AXIS: ${{ github.event.inputs.source_up_axis }}
+          BATCH_JOBS_JSON: ${{ github.event.inputs.batch_jobs_json }}
+        run: |
+          python -m S24.cad.convert_workflow
+
+      - name: Commit outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add outputs/cad_previews/ clean_database/cad_models/
+          STASHED=$(git stash 2>&1)
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          echo "$STASHED" | grep -q "No local changes" || git stash pop
+          git add outputs/cad_previews/ clean_database/cad_models/
+          git diff --staged --quiet || git commit -m "chore: CAD preview + metadata update [skip ci]"
+          git push origin HEAD:"${GITHUB_REF_NAME}"
