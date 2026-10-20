@@ -161,5 +161,7 @@ jobs:
           fi
 
           git commit -m "chore: update SysML JSON + graph [skip ci]"
-          git pull --rebase origin "$BRANCH_NAME"
+          # Package installation can modify tracked metadata outside the graph outputs.
+          # Keep those changes out of the commit while allowing the rebase to proceed.
+          git pull --rebase --autostash origin "$BRANCH_NAME"
           git push origin HEAD:"$BRANCH_NAME"
