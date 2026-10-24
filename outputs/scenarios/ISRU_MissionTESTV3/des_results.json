@@ -1,0 +1,64 @@
+{
+  "written_at": 1792851416320,
+  "status": "error",
+  "warnings": [],
+  "inputs": {
+    "active_nodes": [
+      "HabitationModule",
+      "ISRUPlant",
+      "LOXRover",
+      "LaunchLandingZone",
+      "RegolithRover",
+      "SolarPowerSystem"
+    ],
+    "sysml_active_nodes": [
+      "HabitationModule",
+      "ISRUPlant",
+      "LaunchLandingZone",
+      "PropellantDepot",
+      "LOXRover",
+      "SolarPowerSystem",
+      "RegolithRover",
+      "ISRUExcavation"
+    ],
+    "sysml_json_path": "clean_database/json/ISRU_MissionTESTV3/ISRU_MissionTESTV3.json",
+    "Num_Regolith_Rovers": 1,
+    "Num_LOX_Rovers": 1,
+    "Num_ISRU_Plants": 1,
+    "Regolith_Haul_Distance": 1.25,
+    "LOX_Haul_Distance": 0.83,
+    "Rover_Energy_Consumption": 0.00056,
+    "Rover_Travel_Time": 0.5,
+    "ISRU_Plant_Processing_Rate": 1600.0,
+    "LOX_Transport_Threshold": 175.0,
+    "scenario_config": "{\"engine\":{\"mode\":\"isru\",\"schema_version\":1},\"scenario\":{\"name\":\"ISRU_MissionTESTV3\",\"slug\":\"ISRU_MissionTESTV3\",\"sysml_file\":\"clean_database/sysml/ISRU_MissionTESTV3.sysml\",\"json_asset_root\":\"clean_database/json/ISRU_MissionTESTV3/assets\"},\"simulation\":{\"duration_hr\":60},\"rovers\":{\"regolith\":{\"count\":1,\"max_capacity_kg\":4000},\"lox\":{\"count\":1,\"max_capacity_kg\":4000},\"capacity_by_flow_kg\":{\"regolith\":4000,\"lox\":4000},\"energy_kwh_per_km_per_kg\":0.00056,\"flat_speed_kph\":2,\"slope_speed_penalty_per_deg\":0.05,\"travel_time_hr_per_km\":0.5,\"max_capacity_kg\":4000},\"regolith\":{\"rover_load_kg\":4000,\"plant_batch_kg\":4000,\"plant_input_capacity_kg\":20000,\"dispatch_policy\":\"least_fill_ratio\",\"dispatch_poll_dt_hr\":0.1},\"isru\":{\"plant_count\":1,\"processing_rate_kg_hr\":1600,\"conversion_efficiency\":0.002527902017,\"lox_transport_threshold_kg\":175,\"lox_delivery_poll_dt_hr\":1,\"lox_storage_energy_kwh_per_kg_hr\":0.31,\"lox_storage_energy_dt_hr\":1},\"power\":{\"ignore_power\":false,\"mode\":\"power_constrained\",\"management_dt_hr\":1,\"supply\":{\"power_output_kw\":100,\"battery_capacity_kwh\":500,\"initial_battery_charge_kwh\":500},\"continuous_load_kw\":{\"habitation\":null,\"communications\":null,\"landing_zone_utilities\":null},\"landing_zone_chilling_kw_per_kg\":null,\"spikes\":{\"habitation\":[],\"communications\":[],\"landing_zone\":[]},\"module_models\":{\"HabitationModule\":{\"mode\":\"average\",\"average_kw\":5,\"points\":[{\"time_hr\":0,\"power_kw\":5},{\"time_hr\":60,\"power_kw\":5.015531994047619}],\"equation\":\"\",\"spike_energy_kwh\":20,\"spike_time_hr\":10},\"LaunchLandingZone\":{\"mode\":\"equation\",\"average_kw\":3,\"points\":[{\"time_hr\":0,\"power_kw\":3},{\"time_hr\":60,\"power_kw\":3}],\"equation\":\"PowerIn = 3 + LOXStored * 0.31\",\"spike_energy_kwh\":50,\"spike_time_hr\":25},\"ISRUPlant\":{\"mode\":\"average\",\"average_kw\":10,\"points\":[{\"time_hr\":0,\"power_kw\":0},{\"time_hr\":60,\"power_kw\":0}],\"equation\":\"\",\"spike_energy_kwh\":0,\"spike_time_hr\":0},\"PropellantDepot\":{\"mode\":\"average\",\"average_kw\":5,\"points\":[{\"time_hr\":0,\"power_kw\":0},{\"time_hr\":60,\"power_kw\":0}],\"equation\":\"\",\"spike_energy_kwh\":0,\"spike_time_hr\":0},\"ISRUExcavation\":{\"mode\":\"average\",\"average_kw\":0,\"points\":[{\"time_hr\":0,\"power_kw\":0},{\"time_hr\":60,\"power_kw\":0}],\"equation\":\"\",\"spike_energy_kwh\":0,\"spike_time_hr\":0},\"LOXRover\":{\"mode\":\"average\",\"average_kw\":2,\"points\":[{\"time_hr\":0,\"power_kw\":0},{\"time_hr\":60,\"power_kw\":0}],\"equation\":\"\",\"spike_energy_kwh\":0,\"spike_time_hr\":0},\"RegolithRover\":{\"mode\":\"average\",\"average_kw\":2,\"points\":[{\"time_hr\":0,\"power_kw\":0},{\"time_hr\":60,\"power_kw\":0}],\"equation\":\"\",\"spike_energy_kwh\":0,\"spike_time_hr\":0},\"RegolithRover_1\":{\"mode\":\"average\",\"average_kw\":0,\"points\":[{\"time_hr\":0,\"power_kw\":0},{\"time_hr\":60,\"power_kw\":0}],\"equation\":\"\",\"spike_energy_kwh\":0,\"spike_time_hr\":0},\"RegolithRover_2\":{\"mode\":\"average\",\"average_kw\":0,\"points\":[{\"time_hr\":0,\"power_kw\":0},{\"time_hr\":60,\"power_kw\":0}],\"equation\":\"\",\"spike_energy_kwh\":0,\"spike_time_hr\":0},\"RegolithRover_3\":{\"mode\":\"average\",\"average_kw\":0,\"points\":[{\"time_hr\":0,\"power_kw\":0},{\"time_hr\":60,\"power_kw\":0}],\"equation\":\"\",\"spike_energy_kwh\":0,\"spike_time_hr\":0}}},\"scenario_builder\":{\"scenario_mode\":\"isru\",\"instances\":[{\"id\":\"HabitationModule\",\"type\":\"HabitationModule\",\"placed\":true,\"position_canvas\":{\"cx\":698,\"cy\":338.625},\"orientation_deg\":0},{\"id\":\"ISRUPlant\",\"type\":\"ISRUPlant\",\"placed\":true,\"position_canvas\":{\"cx\":542,\"cy\":285.625},\"orientation_deg\":50},{\"id\":\"LaunchLandingZone\",\"type\":\"LaunchLandingZone\",\"placed\":true,\"position_canvas\":{\"cx\":408,\"cy\":229.625},\"orientation_deg\":0},{\"id\":\"PropellantDepot\",\"type\":\"PropellantDepot\",\"placed\":true,\"position_canvas\":{\"cx\":702,\"cy\":244.625},\"orientation_deg\":0},{\"id\":\"SolarPowerSystem\",\"type\":\"SolarPowerSystem\",\"placed\":true,\"position_canvas\":{\"cx\":701,\"cy\":142.625},\"orientation_deg\":0},{\"id\":\"ISRUExcavation\",\"type\":\"ISRUExcavation\",\"placed\":true,\"position_canvas\":{\"cx\":301,\"cy\":238.625},\"orientation_deg\":0}],\"rover_counts\":{\"regolith\":1,\"lox\":1},\"rover_payloads_kg\":{\"regolith\":4000,\"lox\":4000},\"module_classes\":{\"HabitationModule\":\"Consumer\",\"ISRUPlant\":\"Processor\",\"LaunchLandingZone\":\"Consumer\",\"PropellantDepot\":\"Consumer\",\"LOXRover\":\"Transporter\",\"SolarPowerSystem\":\"PowerGenerator\",\"RegolithRover\":\"Transporter\",\"ISRUExcavation\":\"Source\"},\"power_mode\":\"power_constrained\",\"ignore_power\":false,\"sysml_interfaces\":[{\"id\":\"sysml_interface_1\",\"from_type\":\"SolarPowerSystem\",\"to_type\":\"PropellantDepot\",\"flow\":\"Power\",\"from_port\":\"Power_PowerPortOutToPropellantDepot\",\"to_port\":\"Propellant_PowerPortIn\",\"from_instances\":[\"SolarPowerSystem\"],\"to_instances\":[\"PropellantDepot\"]},{\"id\":\"sysml_interface_2\",\"from_type\":\"SolarPowerSystem\",\"to_type\":\"ISRUPlant\",\"flow\":\"Power\",\"from_port\":\"Power_PowerPortOutToISRUPlant\",\"to_port\":\"ISRU_PowerPortIn\",\"from_instances\":[\"SolarPowerSystem\"],\"to_instances\":[\"ISRUPlant\"]},{\"id\":\"sysml_interface_3\",\"from_type\":\"SolarPowerSystem\",\"to_type\":\"HabitationModule\",\"flow\":\"Power\",\"from_port\":\"Power_PowerPortOutToHabitationModule\",\"to_port\":\"Habitation_PowerPortIn\",\"from_instances\":[\"SolarPowerSystem\"],\"to_instances\":[\"HabitationModule\"]},{\"id\":\"sysml_interface_4\",\"from_type\":\"SolarPowerSystem\",\"to_type\":\"LaunchLandingZone\",\"flow\":\"Power\",\"from_port\":\"Power_PowerPortOutToLaunchLandingZone\",\"to_port\":\"LaunchZone_PowerPortIn\",\"from_instances\":[\"SolarPowerSystem\"],\"to_instances\":[\"LaunchLandingZone\"]},{\"id\":\"sysml_interface_5\",\"from_type\":\"SolarPowerSystem\",\"to_type\":\"ISRUExcavation\",\"flow\":\"Power\",\"from_port\":\"Power_PowerPortOutToISRUExcavation\",\"to_port\":\"Excavation_PowerPortIn\",\"from_instances\":[\"SolarPowerSystem\"],\"to_instances\":[\"ISRUExcavation\"]}],\"transport_links\":[{\"id\":\"ISRUPlantToRover_RoverToPropellantDepot\",\"flow\":\"LOX\",\"from_type\":\"ISRUPlant\",\"to_type\":\"PropellantDepot\",\"rover_type\":\"LOXRover\",\"from_instances\":[\"ISRUPlant\"],\"to_instances\":[\"PropellantDepot\"]},{\"id\":\"ISRUExcavationToRegolithRover_RegolithRoverToISRUPlant\",\"flow\":\"Regolith\",\"from_type\":\"ISRUExcavation\",\"to_type\":\"ISRUPlant\",\"rover_type\":\"RegolithRover\",\"from_instances\":[\"ISRUExcavation\"],\"to_instances\":[\"ISRUPlant\"]}],\"resource_routes\":[{\"id\":\"LOX_LOXRover_ISRUPlant_HabitationModule_1792850388494\",\"flow\":\"LOX\",\"rover_type\":\"LOXRover\",\"rover_id\":\"LOXRover\",\"from\":\"ISRUPlant\",\"to\":\"HabitationModule\",\"stops\":[],\"distance_km\":0.829,\"mean_slope_deg\":7.929,\"max_slope_deg\":8.942},{\"id\":\"Regolith_1792850332702_0\",\"flow\":\"Regolith\",\"rover_type\":\"RegolithRover\",\"rover_id\":\"RegolithRover\",\"from\":\"ISRUExcavation\",\"to\":\"ISRUPlant\",\"stops\":[],\"distance_km\":1.254,\"mean_slope_deg\":5.754,\"max_slope_deg\":10.001},{\"id\":\"LOX_1792849079742_0\",\"flow\":\"LOX\",\"rover_type\":\"LOXRover\",\"rover_id\":\"LOXRover\",\"from\":\"ISRUPlant\",\"to\":\"PropellantDepot\",\"stops\":[],\"distance_km\":0.8,\"mean_slope_deg\":11.054,\"max_slope_deg\":13.175}],\"module_equations\":{\"ISRUExcavation\":\"RegolithOut = RequestedRegolith\\nEnergyConsumed = excavationEnergyCoeff * RegolithOut\\nPowerOut = 0\",\"RegolithRover\":\"RegolithOut = min(RegolithIn, RoverCapacity)\\nTravelTime = Distance * hoursPerKm\\nEnergyConsumed = Distance * CargoMass * energyPerKmPerKg\\nPowerOut = 0\",\"ISRUPlant\":\"LOXOut = RegolithIn * conversionEfficiency\\nProcessingTime = RegolithIn / processingRate\\nBeneficiatedIlmenite = RegolithIn * ilmeniteRecoveryFraction * regHeadGrade\\nBeneficiatedRegolith = BeneficiatedIlmenite / (beneficiationRegolithMultiplier * regHeadGrade)\\nGangueMass = RegolithIn - BeneficiatedRegolith\\nWaterMass = BeneficiatedIlmenite * waterRecoveryFraction * waterMolarMass / ilmeniteMolarMass\\nOxygenMass = WaterMass * oxygenMolarMass / (2 * waterMolarMass)\\nExcavationEnergy = excavationEnergyCoeff * RegolithIn\\nTransportEnergy = transportEnergyCoeff * RegolithIn * transportDist\\nBeneficiationEnergy = RegolithIn * lunarGravity * liftHeight / joulesPerKWh + GangueMass * gangueTransportEnergyCoeff * gangueTransportDist\\nReactorEnergy = reactorEnergyCoeff * BeneficiatedRegolith\\nElectrolysisEnergy = electrolysisEnergyCoeff * WaterMass\\nLiquefactionEnergy = liquefactionEnergyCoeff * OxygenMass\\nEnergyConsumed = ExcavationEnergy + TransportEnergy + BeneficiationEnergy + ReactorEnergy + ElectrolysisEnergy + LiquefactionEnergy\\nPowerOut = 0\",\"LOXRover\":\"LOXOut = min(LOXIn, RoverCapacity)\\nTravelTime = Distance * hoursPerKm\\nEnergyConsumed = Distance * CargoMass * energyPerKmPerKg\\nPowerOut = 0\",\"PropellantDepot\":\"LOXStored = LOXStored + LOXIn\\nPowerIn = 0\\nPowerOut = 0\",\"SolarPowerSystem\":\"PowerOut = powerOutput\\nPowerIn = 0\",\"HabitationModule\":\"PowerIn = constantPowerRate\\nPowerOut = 0\",\"LaunchLandingZone\":\"PowerIn = utilitiesPowerRate + LOXStored * chillingPowerPerKgLox\\nPowerOut = 0\"}}}",
+    "Rover_Flat_Speed": "2",
+    "Rover_Slope_Speed_Penalty": "0.05"
+  },
+  "sysml_active_nodes": [
+    "HabitationModule",
+    "ISRUPlant",
+    "LaunchLandingZone",
+    "PropellantDepot",
+    "LOXRover",
+    "SolarPowerSystem",
+    "RegolithRover",
+    "ISRUExcavation"
+  ],
+  "des_active_nodes": [
+    "HabitationModule",
+    "ISRUPlant",
+    "LOXRover",
+    "LaunchLandingZone",
+    "RegolithRover",
+    "SolarPowerSystem"
+  ],
+  "errors": [
+    "[14.00 hr] POWER FAILURE: Insufficient power! Needed 183.07 kWh, but only 120.29 kWh available. Deficit: 62.79 kWh. Battery depleted."
+  ],
+  "error_type": "RuntimeError",
+  "scenario_name": "ISRU_MissionTESTV3",
+  "scenario_slug": "ISRU_MissionTESTV3",
+  "request_id": "ISRU_MissionTESTV3-1792851390344-8gdhxj",
+  "sysml_file": "clean_database/sysml/ISRU_MissionTESTV3.sysml"
+}
