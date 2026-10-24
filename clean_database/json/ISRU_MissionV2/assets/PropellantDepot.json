@@ -43,7 +43,7 @@
   "metadata": {
     "geometryRef": "clean_database/cad_models/ISRU_MissionV2/PropellantDepot/PropellantDepot.usdc",
     "cadFileName": "PropellantDepot.usdc",
-    "cadUploadedAt": "2026-10-24T12:43:06.706Z",
+    "cadUploadedAt": "2026-10-24T12:43:08.108Z",
     "glbPreviewRef": "outputs/cad_previews/ISRU_MissionV2/PropellantDepot.glb",
     "sourceCadPath": "clean_database/cad_models/ISRU_MissionV2/PropellantDepot/PropellantDepot.usdc",
     "cadDetectedSizeM": {
@@ -52,7 +52,7 @@
       "height": 5.201
     },
     "cadSourceUpAxis": "Y",
-    "cadSourceFrontAxis": "-X",
+    "cadSourceFrontAxis": "+X",
     "cadSourceUpAxisOverride": false,
     "cadSourceFrontAxisOverride": true,
     "cadDetectedUpAxis": "Y",
