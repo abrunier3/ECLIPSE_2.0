@@ -5,14 +5,14 @@ This guide follows the browser interface from top to bottom. Complete the steps 
 The browser interface is available at:
 
 ```text
-https://abrunier3.github.io/ECLIPSE_2.0/ScenarioIndex.html
+https://arthur12-ux.github.io/ECLIPSE_2.0/ScenarioIndex.html
 ```
 
 You need repository write access and a GitHub Personal Access Token. The interface asks for the token when it needs to run or publish a workflow and keeps it only for the current browser session.
 
 ## Repository deployment
 
-This copy targets `abrunier3/ECLIPSE_2.0` on branch `main`. Browser workflow dispatches,
+This copy targets `arthur12-ux/ECLIPSE_2.0` on branch `main`. Browser workflow dispatches,
 scenario writes, results reads, and remote map assets all use this repository.
 
 1. Commit and push the updated interface and the `.github/workflows/` directory to `main`.
